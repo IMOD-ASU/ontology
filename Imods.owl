@@ -1,0 +1,1187 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY swrl "http://www.w3.org/2003/11/swrl#" >
+    <!ENTITY swrlb "http://www.w3.org/2003/11/swrlb#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY protege "http://protege.stanford.edu/plugins/owl/protege#" >
+    <!ENTITY xsp "http://www.owl-ontologies.com/2005/08/07/xsp.owl#" >
+    <!ENTITY LearningObjective_v2 "http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#"
+     xml:base="http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+     xmlns:LearningObjective_v2="http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#"
+     xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#DomainCategory -->
+
+    <owl:ObjectProperty rdf:about="&LearningObjective_v2;DomainCategory">
+        <rdfs:range rdf:resource="&LearningObjective_v2;Domain_Category"/>
+        <rdfs:subPropertyOf rdf:resource="&LearningObjective_v2;LearningDomain"/>
+        <rdfs:domain rdf:resource="&LearningObjective_v2;Learning_Domain"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#ImodType -->
+
+    <owl:ObjectProperty rdf:about="&LearningObjective_v2;ImodType">
+        <rdfs:subPropertyOf rdf:resource="&LearningObjective_v2;hasCondition"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#LearningDomain -->
+
+    <owl:ObjectProperty rdf:about="&LearningObjective_v2;LearningDomain">
+        <rdfs:range rdf:resource="&LearningObjective_v2;Affective_Domain"/>
+        <rdfs:range rdf:resource="&LearningObjective_v2;Cognitive_Domain"/>
+        <rdfs:domain rdf:resource="&LearningObjective_v2;Performance"/>
+        <rdfs:range rdf:resource="&LearningObjective_v2;Psychomotor_Domain"/>
+        <rdfs:subPropertyOf rdf:resource="&LearningObjective_v2;hasPerformance"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#TargetAudience -->
+
+    <owl:ObjectProperty rdf:about="&LearningObjective_v2;TargetAudience">
+        <rdfs:subPropertyOf rdf:resource="&LearningObjective_v2;hasCondition"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#hasCondition -->
+
+    <owl:ObjectProperty rdf:about="&LearningObjective_v2;hasCondition">
+        <rdfs:range rdf:resource="&LearningObjective_v2;Condition"/>
+        <rdfs:domain rdf:resource="&LearningObjective_v2;Learning_Objective"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#hasContent -->
+
+    <owl:ObjectProperty rdf:about="&LearningObjective_v2;hasContent">
+        <rdfs:domain rdf:resource="&LearningObjective_v2;Performance"/>
+        <rdfs:subPropertyOf rdf:resource="&LearningObjective_v2;hasPerformance"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#hasCriteria -->
+
+    <owl:ObjectProperty rdf:about="&LearningObjective_v2;hasCriteria">
+        <rdfs:range rdf:resource="&LearningObjective_v2;Criteria"/>
+        <rdfs:domain rdf:resource="&LearningObjective_v2;Learning_Objective"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#hasPerformance -->
+
+    <owl:ObjectProperty rdf:about="&LearningObjective_v2;hasPerformance">
+        <rdfs:domain rdf:resource="&LearningObjective_v2;Learning_Objective"/>
+        <rdfs:range rdf:resource="&LearningObjective_v2;Performance"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#topObjectProperty -->
+
+    <owl:ObjectProperty rdf:about="&owl;topObjectProperty"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#Accuracy -->
+
+    <owl:Class rdf:about="&LearningObjective_v2;Accuracy">
+        <rdfs:subClassOf rdf:resource="&LearningObjective_v2;Criteria"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#Action_Word -->
+
+    <owl:Class rdf:about="&LearningObjective_v2;Action_Word">
+        <rdfs:subClassOf rdf:resource="&LearningObjective_v2;Action_Word_Category"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#Action_Word_Category -->
+
+    <owl:Class rdf:about="&LearningObjective_v2;Action_Word_Category">
+        <rdfs:subClassOf rdf:resource="&LearningObjective_v2;Performance"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#Adaptation -->
+
+    <owl:Class rdf:about="&LearningObjective_v2;Adaptation">
+        <rdfs:subClassOf rdf:resource="&LearningObjective_v2;Domain_Category"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#Affective_Domain -->
+
+    <owl:Class rdf:about="&LearningObjective_v2;Affective_Domain">
+        <rdfs:subClassOf rdf:resource="&LearningObjective_v2;Learning_Domain"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#Analyzing -->
+
+    <owl:Class rdf:about="&LearningObjective_v2;Analyzing">
+        <rdfs:subClassOf rdf:resource="&LearningObjective_v2;Domain_Category"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#Applying -->
+
+    <owl:Class rdf:about="&LearningObjective_v2;Applying">
+        <rdfs:subClassOf rdf:resource="&LearningObjective_v2;Domain_Category"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#Cognitive_Domain -->
+
+    <owl:Class rdf:about="&LearningObjective_v2;Cognitive_Domain">
+        <rdfs:subClassOf rdf:resource="&LearningObjective_v2;Learning_Domain"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#Complex_Overt_Response -->
+
+    <owl:Class rdf:about="&LearningObjective_v2;Complex_Overt_Response">
+        <rdfs:subClassOf rdf:resource="&LearningObjective_v2;Domain_Category"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#Condition -->
+
+    <owl:Class rdf:about="&LearningObjective_v2;Condition">
+        <rdfs:subClassOf rdf:resource="&LearningObjective_v2;Objective_Components"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#Content -->
+
+    <owl:Class rdf:about="&LearningObjective_v2;Content">
+        <rdfs:subClassOf rdf:resource="&LearningObjective_v2;Content"/>
+        <rdfs:subClassOf rdf:resource="&LearningObjective_v2;Objective_Components"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#Creating -->
+
+    <owl:Class rdf:about="&LearningObjective_v2;Creating">
+        <rdfs:subClassOf rdf:resource="&LearningObjective_v2;Domain_Category"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#Criteria -->
+
+    <owl:Class rdf:about="&LearningObjective_v2;Criteria">
+        <rdfs:subClassOf rdf:resource="&LearningObjective_v2;Objective_Components"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#Domain_Category -->
+
+    <owl:Class rdf:about="&LearningObjective_v2;Domain_Category"/>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#Evaluating -->
+
+    <owl:Class rdf:about="&LearningObjective_v2;Evaluating">
+        <rdfs:subClassOf rdf:resource="&LearningObjective_v2;Domain_Category"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#Generic -->
+
+    <owl:Class rdf:about="&LearningObjective_v2;Generic">
+        <rdfs:subClassOf rdf:resource="&LearningObjective_v2;Condition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#Guided_Response -->
+
+    <owl:Class rdf:about="&LearningObjective_v2;Guided_Response">
+        <rdfs:subClassOf rdf:resource="&LearningObjective_v2;Domain_Category"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#Internalizing_Values -->
+
+    <owl:Class rdf:about="&LearningObjective_v2;Internalizing_Values">
+        <rdfs:subClassOf rdf:resource="&LearningObjective_v2;Domain_Category"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#Learning_Domain -->
+
+    <owl:Class rdf:about="&LearningObjective_v2;Learning_Domain"/>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#Learning_Objective -->
+
+    <owl:Class rdf:about="&LearningObjective_v2;Learning_Objective"/>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#Mechanical -->
+
+    <owl:Class rdf:about="&LearningObjective_v2;Mechanical">
+        <rdfs:subClassOf rdf:resource="&LearningObjective_v2;Domain_Category"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#Objective_Components -->
+
+    <owl:Class rdf:about="&LearningObjective_v2;Objective_Components"/>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#Organization -->
+
+    <owl:Class rdf:about="&LearningObjective_v2;Organization">
+        <rdfs:subClassOf rdf:resource="&LearningObjective_v2;Domain_Category"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#Origination -->
+
+    <owl:Class rdf:about="&LearningObjective_v2;Origination">
+        <rdfs:subClassOf rdf:resource="&LearningObjective_v2;Domain_Category"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#Perception -->
+
+    <owl:Class rdf:about="&LearningObjective_v2;Perception">
+        <rdfs:subClassOf rdf:resource="&LearningObjective_v2;Domain_Category"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#Performance -->
+
+    <owl:Class rdf:about="&LearningObjective_v2;Performance">
+        <rdfs:subClassOf rdf:resource="&LearningObjective_v2;Objective_Components"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#Performance_Based -->
+
+    <owl:Class rdf:about="&LearningObjective_v2;Performance_Based">
+        <rdfs:subClassOf rdf:resource="&LearningObjective_v2;Condition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#Psychomotor_Domain -->
+
+    <owl:Class rdf:about="&LearningObjective_v2;Psychomotor_Domain">
+        <rdfs:subClassOf rdf:resource="&LearningObjective_v2;Learning_Domain"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#Quality -->
+
+    <owl:Class rdf:about="&LearningObjective_v2;Quality">
+        <rdfs:subClassOf rdf:resource="&LearningObjective_v2;Criteria"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#Quantity -->
+
+    <owl:Class rdf:about="&LearningObjective_v2;Quantity">
+        <rdfs:subClassOf rdf:resource="&LearningObjective_v2;Criteria"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#Receiving_Phenomena -->
+
+    <owl:Class rdf:about="&LearningObjective_v2;Receiving_Phenomena">
+        <rdfs:subClassOf rdf:resource="&LearningObjective_v2;Domain_Category"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#Remembering -->
+
+    <owl:Class rdf:about="&LearningObjective_v2;Remembering">
+        <rdfs:subClassOf rdf:resource="&LearningObjective_v2;Domain_Category"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#Responding_to_Phenomena -->
+
+    <owl:Class rdf:about="&LearningObjective_v2;Responding_to_Phenomena">
+        <rdfs:subClassOf rdf:resource="&LearningObjective_v2;Domain_Category"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#Set -->
+
+    <owl:Class rdf:about="&LearningObjective_v2;Set">
+        <rdfs:subClassOf rdf:resource="&LearningObjective_v2;Domain_Category"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#Speed -->
+
+    <owl:Class rdf:about="&LearningObjective_v2;Speed">
+        <rdfs:subClassOf rdf:resource="&LearningObjective_v2;Criteria"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#Understanding -->
+
+    <owl:Class rdf:about="&LearningObjective_v2;Understanding">
+        <rdfs:subClassOf rdf:resource="&LearningObjective_v2;Domain_Category"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#Valuing -->
+
+    <owl:Class rdf:about="&LearningObjective_v2;Valuing">
+        <rdfs:subClassOf rdf:resource="&LearningObjective_v2;Domain_Category"/>
+    </owl:Class>
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#DomainCategory -->
+
+    <owl:ObjectProperty rdf:about="&LearningObjective_v2;DomainCategory">
+        <rdfs:range rdf:resource="&LearningObjective_v2;Domain_Category"/>
+        <rdfs:subPropertyOf rdf:resource="&LearningObjective_v2;LearningDomain"/>
+        <rdfs:domain rdf:resource="&LearningObjective_v2;Learning_Domain"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#ImodType -->
+
+    <owl:ObjectProperty rdf:about="&LearningObjective_v2;ImodType">
+        <rdfs:subPropertyOf rdf:resource="&LearningObjective_v2;hasCondition"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#LearningDomain -->
+
+    <owl:ObjectProperty rdf:about="&LearningObjective_v2;LearningDomain">
+        <rdfs:range rdf:resource="&LearningObjective_v2;Affective_Domain"/>
+        <rdfs:range rdf:resource="&LearningObjective_v2;Cognitive_Domain"/>
+        <rdfs:domain rdf:resource="&LearningObjective_v2;Performance"/>
+        <rdfs:range rdf:resource="&LearningObjective_v2;Psychomotor_Domain"/>
+        <rdfs:subPropertyOf rdf:resource="&LearningObjective_v2;hasPerformance"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#TargetAudience -->
+
+    <owl:ObjectProperty rdf:about="&LearningObjective_v2;TargetAudience">
+        <rdfs:subPropertyOf rdf:resource="&LearningObjective_v2;hasCondition"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#hasActivity -->
+
+    <owl:ObjectProperty rdf:about="&LearningObjective_v2;hasActivity">
+        <rdfs:range rdf:resource="&LearningObjective_v2;Activity"/>
+        <rdfs:domain rdf:resource="&LearningObjective_v2;InstructionalTechnique"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#hasCondition -->
+
+    <owl:ObjectProperty rdf:about="&LearningObjective_v2;hasCondition">
+        <rdfs:range rdf:resource="&LearningObjective_v2;Condition"/>
+        <rdfs:domain rdf:resource="&LearningObjective_v2;Learning_Objective"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#hasContent -->
+
+    <owl:ObjectProperty rdf:about="&LearningObjective_v2;hasContent">
+        <rdfs:range rdf:resource="&LearningObjective_v2;Content_Area"/>
+        <rdfs:domain rdf:resource="&LearningObjective_v2;Performance"/>
+        <rdfs:subPropertyOf rdf:resource="&LearningObjective_v2;hasPerformance"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#hasCourseDescription -->
+
+    <owl:ObjectProperty rdf:about="&LearningObjective_v2;hasCourseDescription">
+        <rdfs:range rdf:resource="&LearningObjective_v2;CourseDescription"/>
+        <rdfs:domain rdf:resource="&LearningObjective_v2;IMOD"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#hasCoursePolicy -->
+
+    <owl:ObjectProperty rdf:about="&LearningObjective_v2;hasCoursePolicy">
+        <rdfs:range rdf:resource="&LearningObjective_v2;CoursePolicy"/>
+        <rdfs:domain rdf:resource="&LearningObjective_v2;IMOD"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#hasCriteria -->
+
+    <owl:ObjectProperty rdf:about="&LearningObjective_v2;hasCriteria">
+        <rdfs:range rdf:resource="&LearningObjective_v2;Criteria"/>
+        <rdfs:domain rdf:resource="&LearningObjective_v2;Learning_Objective"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#hasDomain -->
+
+    <owl:ObjectProperty rdf:about="&LearningObjective_v2;hasDomain">
+        <rdfs:domain rdf:resource="&LearningObjective_v2;InstructionalTechnique"/>
+        <rdfs:range rdf:resource="&LearningObjective_v2;Learning_Domain"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#hasDomainCategory -->
+
+    <owl:ObjectProperty rdf:about="&LearningObjective_v2;hasDomainCategory">
+        <rdfs:range rdf:resource="&LearningObjective_v2;Domain_Category"/>
+        <rdfs:domain rdf:resource="&LearningObjective_v2;InstructionalTechnique"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#hasInstructor -->
+
+    <owl:ObjectProperty rdf:about="&LearningObjective_v2;hasInstructor">
+        <rdfs:domain rdf:resource="&LearningObjective_v2;IMOD"/>
+        <rdfs:range rdf:resource="&LearningObjective_v2;Instructor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#hasMaterial -->
+
+    <owl:ObjectProperty rdf:about="&LearningObjective_v2;hasMaterial">
+        <rdfs:domain rdf:resource="&LearningObjective_v2;InstructionalTechnique"/>
+        <rdfs:range rdf:resource="&LearningObjective_v2;Materials"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#hasPerformance -->
+
+    <owl:ObjectProperty rdf:about="&LearningObjective_v2;hasPerformance">
+        <rdfs:domain rdf:resource="&LearningObjective_v2;Learning_Objective"/>
+        <rdfs:range rdf:resource="&LearningObjective_v2;Performance"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#hasSchedule -->
+
+    <owl:ObjectProperty rdf:about="&LearningObjective_v2;hasSchedule">
+        <rdfs:domain rdf:resource="&LearningObjective_v2;IMOD"/>
+        <rdfs:range rdf:resource="&LearningObjective_v2;Schedule"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#topObjectProperty -->
+
+    <owl:ObjectProperty rdf:about="&owl;topObjectProperty"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#attendanceTardiness -->
+
+    <owl:DatatypeProperty rdf:about="&LearningObjective_v2;attendanceTardiness">
+        <rdfs:domain rdf:resource="&LearningObjective_v2;CoursePolicy"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#audience -->
+
+    <owl:DatatypeProperty rdf:about="&LearningObjective_v2;audience">
+        <rdfs:domain rdf:resource="&LearningObjective_v2;CourseDescription"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#classParticipation -->
+
+    <owl:DatatypeProperty rdf:about="&LearningObjective_v2;classParticipation">
+        <rdfs:domain rdf:resource="&LearningObjective_v2;CoursePolicy"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#classroomDecorum -->
+
+    <owl:DatatypeProperty rdf:about="&LearningObjective_v2;classroomDecorum">
+        <rdfs:domain rdf:resource="&LearningObjective_v2;CoursePolicy"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#classroomLocation -->
+
+    <owl:DatatypeProperty rdf:about="&LearningObjective_v2;classroomLocation">
+        <rdfs:domain rdf:resource="&LearningObjective_v2;IMOD"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#creditHours -->
+
+    <owl:DatatypeProperty rdf:about="&LearningObjective_v2;creditHours">
+        <rdfs:domain rdf:resource="&LearningObjective_v2;CourseDescription"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#email -->
+
+    <owl:DatatypeProperty rdf:about="&LearningObjective_v2;email">
+        <rdfs:domain rdf:resource="&LearningObjective_v2;Instructor"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#endDate -->
+
+    <owl:DatatypeProperty rdf:about="&LearningObjective_v2;endDate">
+        <rdfs:domain rdf:resource="&LearningObjective_v2;Schedule"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#firstName -->
+
+    <owl:DatatypeProperty rdf:about="&LearningObjective_v2;firstName">
+        <rdfs:domain rdf:resource="&LearningObjective_v2;Instructor"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#gradingProcedure -->
+
+    <owl:DatatypeProperty rdf:about="&LearningObjective_v2;gradingProcedure">
+        <rdfs:domain rdf:resource="&LearningObjective_v2;CoursePolicy"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#id -->
+
+    <owl:DatatypeProperty rdf:about="&LearningObjective_v2;id">
+        <rdfs:domain rdf:resource="&LearningObjective_v2;IMOD"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#lastName -->
+
+    <owl:DatatypeProperty rdf:about="&LearningObjective_v2;lastName">
+        <rdfs:domain rdf:resource="&LearningObjective_v2;Instructor"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#missedAssignments -->
+
+    <owl:DatatypeProperty rdf:about="&LearningObjective_v2;missedAssignments">
+        <rdfs:domain rdf:resource="&LearningObjective_v2;CoursePolicy"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#mixedMake-upExams -->
+
+    <owl:DatatypeProperty rdf:about="&LearningObjective_v2;mixedMake-upExams">
+        <rdfs:domain rdf:resource="&LearningObjective_v2;CoursePolicy"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#name -->
+
+    <owl:DatatypeProperty rdf:about="&LearningObjective_v2;name">
+        <rdfs:domain rdf:resource="&LearningObjective_v2;IMOD"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#numberOfSeats -->
+
+    <owl:DatatypeProperty rdf:about="&LearningObjective_v2;numberOfSeats">
+        <rdfs:domain rdf:resource="&LearningObjective_v2;CourseDescription"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#officeHours -->
+
+    <owl:DatatypeProperty rdf:about="&LearningObjective_v2;officeHours">
+        <rdfs:domain rdf:resource="&LearningObjective_v2;Instructor"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#overview -->
+
+    <owl:DatatypeProperty rdf:about="&LearningObjective_v2;overview">
+        <rdfs:domain rdf:resource="&LearningObjective_v2;CourseDescription"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#repeats -->
+
+    <owl:DatatypeProperty rdf:about="&LearningObjective_v2;repeats">
+        <rdfs:domain rdf:resource="&LearningObjective_v2;Schedule"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#repeatsEvery -->
+
+    <owl:DatatypeProperty rdf:about="&LearningObjective_v2;repeatsEvery">
+        <rdfs:domain rdf:resource="&LearningObjective_v2;Schedule"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#semester -->
+
+    <owl:DatatypeProperty rdf:about="&LearningObjective_v2;semester">
+        <rdfs:domain rdf:resource="&LearningObjective_v2;IMOD"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#startDate -->
+
+    <owl:DatatypeProperty rdf:about="&LearningObjective_v2;startDate">
+        <rdfs:domain rdf:resource="&LearningObjective_v2;Schedule"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#subjectArea -->
+
+    <owl:DatatypeProperty rdf:about="&LearningObjective_v2;subjectArea">
+        <rdfs:domain rdf:resource="&LearningObjective_v2;CourseDescription"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#timeRatio -->
+
+    <owl:DatatypeProperty rdf:about="&LearningObjective_v2;timeRatio">
+        <rdfs:domain rdf:resource="&LearningObjective_v2;CourseDescription"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#url -->
+
+    <owl:DatatypeProperty rdf:about="&LearningObjective_v2;url">
+        <rdfs:domain rdf:resource="&LearningObjective_v2;IMOD"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#webPage -->
+
+    <owl:DatatypeProperty rdf:about="&LearningObjective_v2;webPage">
+        <rdfs:domain rdf:resource="&LearningObjective_v2;Instructor"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#Accuracy -->
+
+    <owl:Class rdf:about="&LearningObjective_v2;Accuracy">
+        <rdfs:subClassOf rdf:resource="&LearningObjective_v2;Criteria"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#Activity -->
+
+    <owl:Class rdf:about="&LearningObjective_v2;Activity"/>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#Adaptation -->
+
+    <owl:Class rdf:about="&LearningObjective_v2;Adaptation">
+        <rdfs:subClassOf rdf:resource="&LearningObjective_v2;Domain_Category"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#Affective_Domain -->
+
+    <owl:Class rdf:about="&LearningObjective_v2;Affective_Domain">
+        <rdfs:subClassOf rdf:resource="&LearningObjective_v2;Learning_Domain"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#Analyzing -->
+
+    <owl:Class rdf:about="&LearningObjective_v2;Analyzing">
+        <rdfs:subClassOf rdf:resource="&LearningObjective_v2;Domain_Category"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#Applying -->
+
+    <owl:Class rdf:about="&LearningObjective_v2;Applying">
+        <rdfs:subClassOf rdf:resource="&LearningObjective_v2;Domain_Category"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#Cognitive_Domain -->
+
+    <owl:Class rdf:about="&LearningObjective_v2;Cognitive_Domain">
+        <rdfs:subClassOf rdf:resource="&LearningObjective_v2;Learning_Domain"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#Complex_Overt_Response -->
+
+    <owl:Class rdf:about="&LearningObjective_v2;Complex_Overt_Response">
+        <rdfs:subClassOf rdf:resource="&LearningObjective_v2;Domain_Category"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#Condition -->
+
+    <owl:Class rdf:about="&LearningObjective_v2;Condition">
+        <rdfs:subClassOf rdf:resource="&LearningObjective_v2;Objective_Components"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#Content -->
+
+    <owl:Class rdf:about="&LearningObjective_v2;Content"/>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#Content_Area -->
+
+    <owl:Class rdf:about="&LearningObjective_v2;Content_Area">
+        <rdfs:subClassOf rdf:resource="&LearningObjective_v2;Content"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#CourseDescription -->
+
+    <owl:Class rdf:about="&LearningObjective_v2;CourseDescription"/>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#CoursePolicy -->
+
+    <owl:Class rdf:about="&LearningObjective_v2;CoursePolicy"/>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#Creating -->
+
+    <owl:Class rdf:about="&LearningObjective_v2;Creating">
+        <rdfs:subClassOf rdf:resource="&LearningObjective_v2;Domain_Category"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#Criteria -->
+
+    <owl:Class rdf:about="&LearningObjective_v2;Criteria">
+        <rdfs:subClassOf rdf:resource="&LearningObjective_v2;Objective_Components"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#Domain_Category -->
+
+    <owl:Class rdf:about="&LearningObjective_v2;Domain_Category"/>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#Evaluating -->
+
+    <owl:Class rdf:about="&LearningObjective_v2;Evaluating">
+        <rdfs:subClassOf rdf:resource="&LearningObjective_v2;Domain_Category"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#Generic -->
+
+    <owl:Class rdf:about="&LearningObjective_v2;Generic">
+        <rdfs:subClassOf rdf:resource="&LearningObjective_v2;Condition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#Guided_Response -->
+
+    <owl:Class rdf:about="&LearningObjective_v2;Guided_Response">
+        <rdfs:subClassOf rdf:resource="&LearningObjective_v2;Domain_Category"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#IMOD -->
+
+    <owl:Class rdf:about="&LearningObjective_v2;IMOD"/>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#InstructionalTechnique -->
+
+    <owl:Class rdf:about="&LearningObjective_v2;InstructionalTechnique"/>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#Instructor -->
+
+    <owl:Class rdf:about="&LearningObjective_v2;Instructor"/>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#Internalizing_Values -->
+
+    <owl:Class rdf:about="&LearningObjective_v2;Internalizing_Values">
+        <rdfs:subClassOf rdf:resource="&LearningObjective_v2;Domain_Category"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#Learning_Domain -->
+
+    <owl:Class rdf:about="&LearningObjective_v2;Learning_Domain"/>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#Learning_Objective -->
+
+    <owl:Class rdf:about="&LearningObjective_v2;Learning_Objective"/>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#Materials -->
+
+    <owl:Class rdf:about="&LearningObjective_v2;Materials"/>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#Mechanical -->
+
+    <owl:Class rdf:about="&LearningObjective_v2;Mechanical">
+        <rdfs:subClassOf rdf:resource="&LearningObjective_v2;Domain_Category"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#Objective_Components -->
+
+    <owl:Class rdf:about="&LearningObjective_v2;Objective_Components"/>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#Organization -->
+
+    <owl:Class rdf:about="&LearningObjective_v2;Organization">
+        <rdfs:subClassOf rdf:resource="&LearningObjective_v2;Domain_Category"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#Origination -->
+
+    <owl:Class rdf:about="&LearningObjective_v2;Origination">
+        <rdfs:subClassOf rdf:resource="&LearningObjective_v2;Domain_Category"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#Perception -->
+
+    <owl:Class rdf:about="&LearningObjective_v2;Perception">
+        <rdfs:subClassOf rdf:resource="&LearningObjective_v2;Domain_Category"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#Performance -->
+
+    <owl:Class rdf:about="&LearningObjective_v2;Performance">
+        <rdfs:subClassOf rdf:resource="&LearningObjective_v2;Objective_Components"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#Performance_Based -->
+
+    <owl:Class rdf:about="&LearningObjective_v2;Performance_Based">
+        <rdfs:subClassOf rdf:resource="&LearningObjective_v2;Condition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#Psychomotor_Domain -->
+
+    <owl:Class rdf:about="&LearningObjective_v2;Psychomotor_Domain">
+        <rdfs:subClassOf rdf:resource="&LearningObjective_v2;Learning_Domain"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#Quality -->
+
+    <owl:Class rdf:about="&LearningObjective_v2;Quality">
+        <rdfs:subClassOf rdf:resource="&LearningObjective_v2;Criteria"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#Quantity -->
+
+    <owl:Class rdf:about="&LearningObjective_v2;Quantity">
+        <rdfs:subClassOf rdf:resource="&LearningObjective_v2;Criteria"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#Receiving_Phenomena -->
+
+    <owl:Class rdf:about="&LearningObjective_v2;Receiving_Phenomena">
+        <rdfs:subClassOf rdf:resource="&LearningObjective_v2;Domain_Category"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#Remembering -->
+
+    <owl:Class rdf:about="&LearningObjective_v2;Remembering">
+        <rdfs:subClassOf rdf:resource="&LearningObjective_v2;Domain_Category"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#Responding_to_Phenomena -->
+
+    <owl:Class rdf:about="&LearningObjective_v2;Responding_to_Phenomena">
+        <rdfs:subClassOf rdf:resource="&LearningObjective_v2;Domain_Category"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#Schedule -->
+
+    <owl:Class rdf:about="&LearningObjective_v2;Schedule"/>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#Set -->
+
+    <owl:Class rdf:about="&LearningObjective_v2;Set">
+        <rdfs:subClassOf rdf:resource="&LearningObjective_v2;Domain_Category"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#Speed -->
+
+    <owl:Class rdf:about="&LearningObjective_v2;Speed">
+        <rdfs:subClassOf rdf:resource="&LearningObjective_v2;Criteria"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#Sub_Content -->
+
+    <owl:Class rdf:about="&LearningObjective_v2;Sub_Content">
+        <rdfs:subClassOf rdf:resource="&LearningObjective_v2;Content_Area"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#Understanding -->
+
+    <owl:Class rdf:about="&LearningObjective_v2;Understanding">
+        <rdfs:subClassOf rdf:resource="&LearningObjective_v2;Domain_Category"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.asu.edu/ontologies/IMoD/LearningObjective_v2.1.owl#Valuing -->
+
+    <owl:Class rdf:about="&LearningObjective_v2;Valuing">
+        <rdfs:subClassOf rdf:resource="&LearningObjective_v2;Domain_Category"/>
+    </owl:Class>
+
+
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.5.0) http://owlapi.sourceforge.net -->
+
